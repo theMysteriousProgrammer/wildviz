@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="./fire-solid.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- mapbox libraries -->
+    <link rel="stylesheet" href="https://openlayers.org/en/latest/css/ol.css">
+    <script type="text/javascript" src="https://openlayers.org/en/latest/build/ol.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/1.13.0/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/1.13.0/mapbox-gl.css">
+
+    <!-- ol-ext  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol-ext@3.2.22/dist/ol-ext.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ol-ext@3.2.22/dist/ol-ext.min.js"></script>
+
+    <!-- style font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- jquery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
+
+    <!-- library for printing map -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/eligrey/FileSaver.js/aa9f4e0e/FileSaver.min.js"></script>
+
+    <!-- Gecoding -->
+    <link rel="stylesheet" href="https://unpkg.com/ol-geocoder@latest/dist/ol-geocoder.min.css" />
+    <script src="https://unpkg.com/ol-geocoder"></script>
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+   
+
+  
+    <!-- css styling -->
+    
+
+
+
+    <title>WildViz</title>
+    <script type="module" crossorigin src="/assets/index.d46b8bc8.js"></script>
+    <link rel="stylesheet" href="/assets/index.203ccdfe.css">
+  </head>
+  <body>
+    <div class="row">
+
+      <div class="mapContainer">
+        <button id="pdfPrint" style="display: none;">export map as pdf</button>
+        <div id="map" class="map">
+          <div class="loading">
+            Please wait while we fetch the data
+           <img src="/assets/Ball-1s-200px (1).4505c8a0.gif" class="loader">
+           
+          </div>
+        </div>
+      
+      </div>
+
+      <div class="filterTable">
+        <div class="details"></div>
+        <div class="clusterHeading"></div>
+        <div class="clusterInfo"></div>
+
+        <div class="wildVizInfo">
+          <h2>Wild<img src="/assets/fire-solid.76c88107.svg" class="image_2">iz</h2>
+          <h3>Wild Fire Event Visualization Tracker </h3>
+
+          <div class="wildVizContent">
+            <h1>WildViz is a web map application that visualizes wildfire events. WildViz is inspired by wildfire outbreaks occurring on
+            our planet earth.
+            </h1>
+            
+            <h1>All data visualized on WildViz is obtained from the EONET (Earth Observatory Natural Event Tracker) repository using a customized Django API.</h1>
+            
+            <h1>If you
+            are interested in knowing about the EONET, kindly click
+            <a href="https://eonet.gsfc.nasa.gov/" style="color: rgb(205, 126, 30); font-size: 1em; font-weight: bolder;">here</a></h1>
+            
+            <h1>WildViz is for visualization and general information purposes only and should not be construed as "official" with regard
+            to a spatial or temporal extent.
+            </h1>
+            
+
+          </div>
+        </div>
+
+        <div class="nasaLogo">
+          <h5>Powered by:</h5> <br/>
+          <img src="/assets/nasa-logo.cb37a5de.svg" class="image_1">
+        </div>
+
+      </div>
+
+     
+
+      
+
+
+
+      <div class="layerSelectContainer" style="display: none;">
+        <select id="layer-select">
+          <option value="CanvasDark" selected>Aerial imagery with a road overlay</option>
+      
+        </select>
+      </div>
+    
+    </div>
+
+
+
+    
+    
+
+  </body>
+</html>
